@@ -4,7 +4,8 @@ import reverseGeocode from 'latlng-to-zip';
 import JOB_DATA from "./IndeedJobData.json";
 
 import {
-    FETCH_JOBS
+    FETCH_JOBS, 
+    LIKE_JOB
 } from './types'
 
 const JOB_QUERY_PARAMS = {
@@ -32,3 +33,10 @@ export const fetchJobs = (region, cb) =>  async (dispatch) => {
     }
 
 }
+
+export const likeJob = (job) => {
+    return {
+        payload: job, 
+        type: LIKE_JOB
+    }
+} 
