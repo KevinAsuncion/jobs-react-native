@@ -20,7 +20,7 @@ class DeckScreen extends Component {
         <MapView
           scrollEnabled={false}
           style={{flex: 1}}
-          cacheEnabled={Platform.OS === 'android' ? true: false }
+          cacheEnabled={Platform.OS === 'android'}
           initialRegion={initialRegion}
         >
         </MapView>
@@ -33,8 +33,18 @@ class DeckScreen extends Component {
       </Card>
     );
   }
-  renderNoMoreCards() {
-    return <Card title="no more jobs" />;
+  renderNoMoreCards = () => {
+    return (
+    <Card title="No More Jobs">
+      <Button
+        title="Back To Map"
+        large
+        icon={{name: 'my-location'}}
+        backgroundColor= "#03A9F4"
+        onPress={()=> this.props.navigation.navigate('map')}
+      
+      />
+    </Card>);
   }
 
   render() {

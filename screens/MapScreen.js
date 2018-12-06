@@ -7,6 +7,10 @@ import * as actions from '../actions';
 
 class MapScreen extends Component {
 
+  static navigationOptions = {
+    headerTitle: 'Map',
+  }
+
   state = {
     mapLoaded: false, 
     region: {
